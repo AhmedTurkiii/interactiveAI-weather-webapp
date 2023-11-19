@@ -17,7 +17,7 @@
     <!-- Conditional rendering based on availability of 'weather' variable -->
     {% if weather %}
         <!-- Displaying the current temperature -->
-        <div>Temperature: {{ weather['current']['temp_f'] }}°F</div>
+        <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
         
         <!-- Displaying the current weather description -->
         <div>Description: {{ weather['current']['condition']['text'] }}</div>

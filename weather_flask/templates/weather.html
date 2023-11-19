@@ -5,42 +5,38 @@
     <title>Weather App</title>
 </head>
 <body>
-    <!-- Form for user to input city name for weather search -->
+    <!-- Form to input the city name for weather search -->
+    <!-- The method="post" attribute indicates data sent to server when submitting the form -->
     <form method="post">
+        <!-- Input field for the city name with a placeholder to guide users -->
         <input type="text" name="city" placeholder="Enter city name">
+        <!-- Submit button for the form -->
         <input type="submit" value="Get Weather">
     </form>
 
-    <!-- Check if weather data is available -->
+    <!-- Conditional rendering based on availability of 'weather' variable -->
     {% if weather %}
-        <!-- Displaying current temperature -->
-        <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
-        <!-- Displaying current weather description -->
+        <!-- Displaying the current temperature -->
+        <div>Temperature: {{ weather['current']['temp_f'] }}°F</div>
+        
+        <!-- Displaying the current weather description -->
         <div>Description: {{ weather['current']['condition']['text'] }}</div>
-        <!-- Displaying low and high temperatures for the day -->
-        <div>Low: {{ weather['forecast']['forecastday'][0]['day']['mintemp_f'] }}°F, High: {{ weather['forecast']['forecastday'][0]['day']['maxtemp_f'] }}°F</div>
-        <!-- Displaying sunrise and sunset times -->
-        <div>Sunrise: {{ weather['forecast']['forecastday'][0]['astro']['sunrise'] }}</div>
-        <div>Sunset: {{ weather['forecast']['forecastday'][0]['astro']['sunset'] }}</div>
-
-        <!-- Loop to display hourly weather forecast -->
-        {% for hour in weather['forecast']['forecastday'][0]['hour'] %}
-            <div>
-                <!-- Displaying time, temperature, and description for each hour -->
-                <span>Time: {{ hour['time'] | date: "%I:%M %p" }}</span>
-                <span>Temperature: {{ hour['temp_f'] }}°F</span>
-                <span>Description: {{ hour['condition']['text'] }}</span>
-                <!-- Displaying chance of rain if it's greater than 0% -->
-                {% if hour['chance_of_rain'] > 0 %}
-                    <span>Chance of Rain: {{ hour['chance_of_rain'] }}%</span>
-                {% endif %}
-            </div>
-        {% endfor %}
+        
+        <!-- Displaying the wind speed -->
+        <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
+        
+        <!-- Displaying the 'feels like' temperature -->
+        <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
+        
+        <!-- Displaying the current moon phase -->
+        <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
+        
+        <!-- Additional weather information could be displayed here -->
+        
     {% else %}
         <!-- Message displayed if no weather data is available -->
-        <div>No weather data available. Try searching for a different city.</div>
+        <div>Search for a city. </div>
     {% endif %}
 </body>
 </html>
-
 

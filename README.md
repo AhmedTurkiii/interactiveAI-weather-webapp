@@ -136,12 +136,13 @@ PLACEHOLDER
 ## Contact
 
 Alexis Guzman - [Linkedin](https://www.linkedin.com/in/alexis-guzman-cs9/) - aleguzmancs9@gmail.com
+<br>Dalia Cabrera - [Linkedin](https://www.linkedin.com/in/dalia-c-4754a4247/) - daliaesmcabrera@outlook.com
 
 
 Project Link: [https://github.com/aleguzmancs9/Weather.git](https://github.com/aleguzmancs9/Weather)
 
 
-<br>Dalia Cabrera - [Linkedin](https://www.linkedin.com/in/dalia-c-4754a4247/) - daliaesmcabrera@outlook.com
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

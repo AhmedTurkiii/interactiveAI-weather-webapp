@@ -9,7 +9,7 @@ body, html {
 
 /* The .bg class applies the background image and styles */
 .bg {
-    background-image: url("vibrant_logo.jpg"); /* Sets the specified image as the background. */
+    background-image: url("images/vibrant_logo.jpg"); /* Sets the specified image as the background. */
     background-position: center 12%; /* Positions the background image in the center horizontally and 12% from the top vertically. */
     background-repeat: no-repeat; /* Ensures that the background image does not repeat (tile) across the element. */
     background-size: cover; /* Scales the image to completely cover the element, maintaining its aspect ratio. */

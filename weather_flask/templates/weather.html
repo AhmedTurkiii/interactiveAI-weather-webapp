@@ -1,42 +1,69 @@
+<!-- weather.html -->
 <!DOCTYPE html>
-<html>
-<head>
-    <!-- Title of the webpage -->
-    <title>Weather App</title>
-</head>
-<body>
-    <!-- Form to input the city name for weather search -->
-    <!-- The method="post" attribute indicates data sent to server when submitting the form -->
-    <form method="post">
-        <!-- Input field for the city name with a placeholder to guide users -->
-        <input type="text" name="city" placeholder="Enter city name">
-        <!-- Submit button for the form -->
-        <input type="submit" value="Get Weather">
-    </form>
+<!-- The above declaration defines this document as HTML5 -->
 
-    <!-- Conditional rendering based on availability of 'weather' variable -->
-    {% if weather %}
-        <!-- Displaying the current temperature -->
-        <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
+<html>
+    <head>
+        <!-- The head section contains meta-information about the document -->
         
-        <!-- Displaying the current weather description -->
-        <div>Description: {{ weather['current']['condition']['text'] }}</div>
-        
-        <!-- Displaying the wind speed -->
-        <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
-        
-        <!-- Displaying the 'feels like' temperature -->
-        <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
-        
-        <!-- Displaying the current moon phase -->
-        <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
-        
-        <!-- Additional weather information could be displayed here -->
-        
-    {% else %}
-        <!-- Message displayed if no weather data is available -->
-        <div>Search for a city. </div>
-    {% endif %}
-</body>
+        <!-- Title of the webpage -->
+        <title>Weather App</title>
+        <!-- This sets the title of the webpage, shown in the browser's title bar or tab -->
+
+        <!-- Link to the external CSS file for styling -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <!-- This links a CSS file for styling the webpage. 'url_for' is a Flask function to find 'style.css' in the 'static' directory -->
+    </head>
+    <body class="bg">
+        <!-- The body section contains all the content of the webpage -->
+        <!-- 'class="bg"' applies a background style defined in the linked CSS file -->
+
+        <!-- Centered container for the content of the page -->
+        <div class="content-container">
+            <!-- This div acts as a container with a specific layout and style -->
+
+            <!-- Form for users to input a city name -->
+            <form method="post" class="weather-form">
+                <!-- The form sends data to the server using POST method -->
+
+                <!-- Input field for users to enter a city name -->
+                <input type="text" name="city" placeholder="Enter city name">
+                <!-- 'placeholder' provides a hint about what to enter in this field -->
+
+                <!-- Submit button for the form -->
+                <input type="submit" value="Get Weather">
+                <!-- On clicking this button, the form data is submitted to the server -->
+            </form>
+
+            <!-- Conditional content rendering based on whether 'weather' data is available -->
+            {% if weather %}
+                <!-- If 'weather' data is available, display it in this section -->
+
+                <!-- Container for weather information -->
+                <div class="weather-info">
+                    <!-- Each 'div' here displays a piece of weather information -->
+
+                    <!-- Displaying the current temperature -->
+                    <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
+                    
+                    <!-- Displaying the current weather description -->
+                    <div>Description: {{ weather['current']['condition']['text'] }}</div>
+                    
+                    <!-- Displaying the wind speed -->
+                    <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
+                    
+                    <!-- Displaying the 'feels like' temperature -->
+                    <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
+                    
+                    <!-- Displaying the current moon phase -->
+                    <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
+                </div>
+            {% else %}
+                <!-- If no 'weather' data is available, display a message -->
+                <div class="weather-info">Search for a valid city.</div>
+            {% endif %}
+        </div>
+    </body>
 </html>
+
 

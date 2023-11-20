@@ -30,6 +30,11 @@
                     var sunnyAudio = new Audio("{{ url_for('play_audio', filename='sunny_sound.mp3') }}");
                     // Play the sunny audio
                     sunnyAudio.play();
+                }else if (description.includes("windy")) {
+                    // Create an audio element for sunny
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='windy_sound.mp3') }}");
+                    // Play the sunny audio
+                    sunnyAudio.play();
                 }
             });
         </script>

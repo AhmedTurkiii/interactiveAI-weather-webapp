@@ -15,12 +15,17 @@
                 // Check if the weather description contains "rain", "thunder", or "sunny"
                 var description = document.getElementById('weather-description').textContent.toLowerCase();
                 
-                if (description.includes("rain")) {
-                    // Create an audio element for rain
-                    var rainAudio = new Audio("{{ url_for('play_audio', filename='rain_sound.mp3') }}");
-                    // Play the rain audio
+                if (description.includes("Patchy rain possible")) {
+                    // Create an audio element for Patchy rain possible
+                    var rainAudio = new Audio("{{ url_for('play_audio', filename='rainpossible_sound.mp3') }}");
+                    // Play the Patchy rain possible audio
                     rainAudio.play();
-                } else if (description.includes("thunder")) {
+                }else if (description.includes("rain")) {
+                    // Create an audio element for rain
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='rain_sound.mp3') }}");
+                    // Play the rain audio
+                    sunnyAudio.play();
+                }else if (description.includes("thunder")) {
                     // Create an audio element for thunder
                     var thunderAudio = new Audio("{{ url_for('play_audio', filename='thunder_sound.mp3') }}");
                     // Play the thunder audio
@@ -31,9 +36,29 @@
                     // Play the sunny audio
                     sunnyAudio.play();
                 }else if (description.includes("windy")) {
-                    // Create an audio element for sunny
+                    // Create an audio element for windy
                     var sunnyAudio = new Audio("{{ url_for('play_audio', filename='windy_sound.mp3') }}");
-                    // Play the sunny audio
+                    // Play the windy audio
+                    sunnyAudio.play();
+                }else if (description.includes("overcast")) {
+                    // Create an audio element for overcast
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='overcast_sound.mp3') }}");
+                    // Play the overcast audio
+                    sunnyAudio.play();
+                }else if (description.includes("mist")) {
+                    // Create an audio element for mist
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='mist_sound.mp3') }}");
+                    // Play the mist audio
+                    sunnyAudio.play();
+                }else if (description.includes("cloud")) {
+                    // Create an audio element for cloud
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='cloud_sound.mp3') }}");
+                    // Play the cloud audio
+                    sunnyAudio.play();
+                }else if (description.includes("clear")) {
+                    // Create an audio element for clear
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='clear_sound.mp3') }}");
+                    // Play the clear audio
                     sunnyAudio.play();
                 }
             });

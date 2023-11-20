@@ -1,0 +1,66 @@
+/* style.css */
+
+/* Apply basic reset to remove default margins and padding for all elements */
+body, html {
+    height: 100%; /* This makes the body and html elements fill the entire height of the viewport (browser window). */
+    margin: 0; /* Removes the default margin (space outside the border) from body and html elements. */
+    padding: 0; /* Removes the default padding (space inside the border) from body and html elements. */
+}
+
+/* The .bg class applies the background image and styles */
+.bg {
+    background-image: url("vibrant_logo.jpg"); /* Sets the specified image as the background. */
+    background-position: center 12%; /* Positions the background image in the center horizontally and 12% from the top vertically. */
+    background-repeat: no-repeat; /* Ensures that the background image does not repeat (tile) across the element. */
+    background-size: cover; /* Scales the image to completely cover the element, maintaining its aspect ratio. */
+}
+
+/* The .content-container class centers its children elements using flexbox */
+/* TEXT BOX */
+.content-container {
+    display: flex; /* Enables flexbox layout, a powerful layout mode in CSS3. */
+    flex-direction: column; /* Aligns children elements (like forms or divs) vertically. */
+    align-items: center; /* Horizontally centers the children elements within the container. */
+    justify-content: center; /* Vertically centers the children elements within the container. */
+    height: 100%; /* Sets the container's height to 100% of its parent element, here the viewport. */
+    text-align: center; /* Centers the text within children elements of the container. */
+}
+
+/* Style for the form itself, which contains the input and submit button */
+.weather-form {
+    background: rgba(255, 255, 255, 0.8); /* Sets a semi-transparent white background for the form. */
+    padding: 20px; /* Creates space inside the form, around the input and button. */
+    border-radius: 10px; /* Rounds the corners of the form. */
+    margin-bottom: 20px; /* Creates space below the form. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the form for a 3D effect. */
+}
+
+/* Style for the input box within the form */
+.weather-form input[type="text"] {
+    margin: 10px 0; /* Adds vertical margin for spacing around the input box. */
+    padding: 10px; /* Adds space inside the input box for text. */
+    border: 1px solid #ddd; /* Sets a light grey border around the input box. */
+    border-radius: 5px; /* Slightly rounds the corners of the input box. */
+}
+
+/* Style for the submit button within the form */
+.weather-form input[type="submit"] {
+    padding: 10px 15px; /* Padding inside the submit button for size. */
+    background-color: #007bff; /* Sets a blue background color (e.g., Bootstrap primary color). */
+    color: white; /* Sets the text color to white. */
+    border: none; /* Removes the default border from the button. */
+    border-radius: 5px; /* Rounds the corners of the button. */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button. */
+}
+
+/* Style for the weather information display */
+/* DISPLAY */
+.weather-info {
+    background: rgba(255, 255, 255, 0.8); /* Sets a semi-transparent white background for the weather info display. */
+    padding: 20px; /* Adds padding inside the weather info container. */
+    border-radius: 10px; /* Rounds the corners of the weather info container. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a 3D effect. */
+    max-width: 300px; /* Limits the maximum width of the weather info container. */
+    margin: left; /* Aligns the weather info container to the left side of its parent container. */
+}
+

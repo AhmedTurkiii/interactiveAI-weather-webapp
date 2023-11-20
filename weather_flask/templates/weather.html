@@ -9,7 +9,30 @@
         <!-- Title of the webpage -->
         <title>Weather App</title>
         <!-- This sets the title of the webpage, shown in the browser's title bar or tab -->
-
+        <script>
+            // JavaScript to play audio when the page has loaded
+            document.addEventListener('DOMContentLoaded', function () {
+                // Check if the weather description contains "rain", "thunder", or "sunny"
+                var description = document.getElementById('weather-description').textContent.toLowerCase();
+                
+                if (description.includes("rain")) {
+                    // Create an audio element for rain
+                    var rainAudio = new Audio("{{ url_for('play_audio', filename='rain_sound.mp3') }}");
+                    // Play the rain audio
+                    rainAudio.play();
+                } else if (description.includes("thunder")) {
+                    // Create an audio element for thunder
+                    var thunderAudio = new Audio("{{ url_for('play_audio', filename='thunder_sound.mp3') }}");
+                    // Play the thunder audio
+                    thunderAudio.play();
+                } else if (description.includes("sunny")) {
+                    // Create an audio element for sunny
+                    var sunnyAudio = new Audio("{{ url_for('play_audio', filename='sunny_sound.mp3') }}");
+                    // Play the sunny audio
+                    sunnyAudio.play();
+                }
+            });
+        </script>
         <!-- Link to the external CSS file for styling -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <!-- This links a CSS file for styling the webpage. 'url_for' is a Flask function to find 'style.css' in the 'static' directory -->
@@ -38,7 +61,7 @@
             <!-- Conditional content rendering based on whether 'weather' data is available -->
             {% if weather %}
                 <!-- If 'weather' data is available, display it in this section -->
-
+                <div id="weather-description">Description: {{ weather['current']['condition']['text'] }}</div>
                 <!-- Container for weather information -->
                 <div class="weather-info">
                     <!-- Each 'div' here displays a piece of weather information -->

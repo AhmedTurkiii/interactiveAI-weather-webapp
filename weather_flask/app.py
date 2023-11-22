@@ -12,10 +12,14 @@ app = Flask(__name__)
 def home():
     # Initialize weather_data to None
     weather_data = None
+    # Variable to control form visibility
+    show_form = True  
     # Check if the request method is POST
     if request.method == 'POST':
         # Retrieve city name from the form data
         city = request.form['city']
+         # Hide the form when displaying weather data
+        show_form = False 
         # Fetch weather data using the get_weather_data function
         weather_data = get_weather_data(city)
     # Render the weather.html template, passing the weather data

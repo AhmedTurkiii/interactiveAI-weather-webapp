@@ -1,0 +1,20 @@
+<!DOCTYPE html> <!-- HTML5 document type declaration -->
+<html>
+<head>
+    <title>Weather App</title> <!-- Title of the webpage -->
+    <!-- Linking an external CSS stylesheet for styling the page -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg"> <!-- Setting a class for the body to apply background styling -->
+    <div class="content-container">
+        <!-- Form for user input; submits data to the server -->
+        <form method="post" action="{{ url_for('results') }}" class="weather-form">
+            <!-- Input field for users to enter a city name -->
+            <input type="text" name="city" placeholder="Enter city name">
+            <!-- Submit button for the form -->
+            <input type="submit" value="Get Weather">
+        </form>
+    </div>
+</body>
+</html>
+

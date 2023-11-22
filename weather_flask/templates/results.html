@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!-- HTML document declaration -->
+<html>
+<head>
+    <title>Weather Results</title>
+    <!-- Linking an external CSS file for styling the page -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Adding a button to navigate back to the home page -->
+    <button id="home-button">Home</button>
+</head>
+<body class="bg"> <!-- Setting a class for the body to apply background styling -->
+    <div class="content-container">
+        <!-- Jinja2 templating syntax to check if weather data is available -->
+        {% if weather %}
+            <!-- Displaying weather description -->
+            <div id="weather-description">Description: {{ weather['current']['condition']['text'] }}</div>
+            <div class="weather-info">
+                <!-- Displaying various weather data points -->
+                <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
+                <div>Description: {{ weather['current']['condition']['text'] }}</div>
+                <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
+                <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
+                <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
+            </div>
+        {% else %}
+            <!-- Displaying a message if no weather data is available -->
+            <div class="weather-info">Search for a valid city.</div>
+        {% endif %}
+
+        <!-- Container for dynamically added sound buttons -->
+        <div id="sound-buttons-container" class="center-container"></div>
+    </div>
+
+    <!-- JavaScript for interactive features -->
+    <script>
+        // JavaScript event listener to redirect to home page when button is clicked
+        document.getElementById('home-button').addEventListener('click', function () {
+            window.location.href = "{{ url_for('home') }}";
+        });
+
+        // Function to create a sound playback button
+        function createSoundButton(text, soundFile) {
+            var audio = new Audio(soundFile); // Creating a new audio object
+            audio.autoplay = true; // Setting autoplay to true
+            var button = document.createElement('button'); // Creating a new button element
+            button.innerText = 'Pause'; // Setting the initial text of the button
+
+            // Event listener for button click to toggle audio playback
+            button.onclick = function () {
+                if (audio.paused) {
+                    audio.play(); // Play audio if paused
+                    button.innerText = 'Pause'; // Change button text
+                } else {
+                    audio.pause(); // Pause audio if playing
+                    button.innerText = 'Play'; // Change button text
+                }
+            };
+
+            // Adding the button to the sound buttons container
+            document.getElementById('sound-buttons-container').appendChild(button);
+            return button;
+        }
+
+        // Function to play weather-specific sound based on the current condition
+        function playWeatherSound(condition, soundFile) {
+            var description = document.getElementById('weather-description').textContent.toLowerCase();
+            if (description.includes(condition)) {
+                createSoundButton('Play ' + condition.charAt(0).toUpperCase() + condition.slice(1) + ' Sound', soundFile);
+            }
+        }
+
+        // Function to update the background based on the weather condition
+        function updateBackground(condition, className) {
+            var description = document.getElementById('weather-description').textContent.toLowerCase();
+            if (description.includes(condition)) {
+                document.body.classList = ""; // Resetting any existing class
+                document.body.classList.add(className); // Adding the new class for background
+            }
+        }
+
+        // Ensuring the DOM is fully loaded before executing script
+        document.addEventListener('DOMContentLoaded', function () {
+            // Calling functions to play sound and update the background for specific conditions
+            playWeatherSound("rain", "{{ url_for('play_audio', filename='rain_sound.mp3') }}");
+            updateBackground("clear", "bg-clear-sunny");
+            updateBackground("sunny", "bg-clear-sunny");
+            updateBackground("mist", "bg-mist");
+            updateBackground("overcast", "bg-overcast-cloudy");
+            updateBackground("cloudy", "bg-overcast-cloudy");
+            updateBackground("rain", "bg-rainy");
+            updateBackground("thunder", "bg-thunder");
+            updateBackground("windy", "bg-windy");
+        });
+
+        playWeatherSound("patchy rain possible", "{{ url_for('play_audio', filename='patchy_rain_sound.mp3') }}");
+        playWeatherSound("rain", "{{ url_for('play_audio', filename='rain_sound.mp3') }}");
+        playWeatherSound("thunder", "{{ url_for('play_audio', filename='thunder_sound.mp3') }}");
+        playWeatherSound("sunny", "{{ url_for('play_audio', filename='sunny_sound.mp3') }}");
+        playWeatherSound("clear", "{{ url_for('play_audio', filename='sunny_sound.mp3') }}");
+        playWeatherSound("windy", "{{ url_for('play_audio', filename='windy_sound.mp3') }}");
+        playWeatherSound("overcast",  "{{ url_for('play_audio', filename='overcast_sound.mp3') }}");
+        playWeatherSound("mist", "{{ url_for('play_audio', filename='mist_sound.mp3') }}");
+        playWeatherSound("cloud", "{{ url_for('play_audio', filename='cloud_sound.mp3') }}");
+    </script>
+</body>
+</html>

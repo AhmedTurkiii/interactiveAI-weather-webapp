@@ -3,6 +3,7 @@
 # Import necessary modules from Flask and the custom function for weather data
 from flask import Flask, render_template, request, send_file
 from main import get_weather_data
+import requests
 
 # Create a Flask app instance
 app = Flask(__name__)
@@ -10,20 +11,17 @@ app = Flask(__name__)
 # Define a route for the home page which supports both GET and POST methods
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    # Initialize weather_data to None
-    weather_data = None
-    # Variable to control form visibility
-    show_form = True  
-    # Check if the request method is POST
-    if request.method == 'POST':
-        # Retrieve city name from the form data
-        city = request.form['city']
-         # Hide the form when displaying weather data
-        show_form = False 
-        # Fetch weather data using the get_weather_data function
-        weather_data = get_weather_data(city)
-    # Render the weather.html template, passing the weather data
-    return render_template('weather.html', weather=weather_data)
+     # Render the form
+    return render_template('home.html')
+
+@app.route('/results', methods=['POST'])
+def results():
+    # Get city from form data
+    city = request.form['city']
+    # Fetch weather data
+    weather_data = get_weather_data(city)
+    # Render the results page with weather data
+    return render_template('results.html', weather=weather_data)
 
 # Route for playing the audio file
 @app.route('/play_audio')

@@ -20,6 +20,7 @@
                 <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
                 <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
                 <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
+                <div id="clothing-recommendations">Clothing Recommendations: {{ clothing  }}</div>
             </div>
         {% else %}
             <!-- Displaying a message if no weather data is available -->

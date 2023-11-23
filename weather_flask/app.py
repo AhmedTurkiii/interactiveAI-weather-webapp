@@ -38,7 +38,7 @@ def results():
     clothing_recommendations = clothing_recommendations.replace('Shoes:', '').replace('Bottoms:', '').replace('Shirt/Sweater:', '')
 
     # Render the results page with weather data
-    return render_template('results.html', weather=weather_data)
+    return render_template('results.html', weather=weather_data, clothing=clothing_recommendations)
 
 # Route for playing the audio file
 @app.route('/play_audio')

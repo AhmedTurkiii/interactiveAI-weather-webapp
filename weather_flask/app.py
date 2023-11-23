@@ -3,7 +3,7 @@
 # Import necessary modules from Flask and the custom function for weather data
 from flask import Flask, render_template, request, send_file
 from main import get_weather_data
-import requests
+from openai import OpenAI
 
 # Create a Flask app instance
 app = Flask(__name__)
@@ -20,6 +20,19 @@ def results():
     city = request.form['city']
     # Fetch weather data
     weather_data = get_weather_data(city)
+    current_condition = weather_data['current']['condition']['text'].lower()
+    current_temperature = weather_data['current']['temp_f']
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a program that gives clothing recommendations based on weather conditions. Your response is only the clothing and nothing else. Provide shoes, bottoms, shirt/sweater. Output example: Rain boots, pants, sweater. Only give me one of each."},
+            {"role": "user", "content": f"It is currently {current_condition} and the temperature is {current_temperature}°F. Give me clothing recommendations"}
+        ]
+    )
+    clothing_recommendations = str(completion.choices[0].message.content)
+    clothing_recommendations = clothing_recommendations.replace('Shoes:', '').replace('Bottoms:', '').replace('Shirt/Sweater:', '')
+
     # Render the results page with weather data
     return render_template('results.html', weather=weather_data)
 

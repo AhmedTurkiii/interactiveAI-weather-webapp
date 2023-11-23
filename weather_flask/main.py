@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 # Read the API key for the weather service from a file named 'api_key'
-API_KEY = open('api_key', 'r').read()
+API_KEY = open('api_key_weatherAPI', 'r').read()
 
 # Function to fetch weather data for a given city
 def get_weather_data(city):

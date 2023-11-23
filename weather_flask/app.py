@@ -5,6 +5,10 @@ from flask import Flask, render_template, request, send_file
 from main import get_weather_data
 from openai import OpenAI
 
+
+# Opening and reading the API KEY
+OPENAI_API_KEY = open('api_key_openai', 'r').read()
+
 # Create a Flask app instance
 app = Flask(__name__)
 

@@ -61,10 +61,12 @@ PLACEHOLDER
 ### Built With
 
 * [Python][Python-url]
-* [Together.ai][Together-url]
-* [WeatherAPI][WeatherAPI-url]
 * [Flask][Flask-url]
+* [OpenAI][OpenAI-url]
+* [WeatherAPI][WeatherAPI-url]
+* [JavaScript][JavaScript-url]
 * HTML
+* CSS
 * [Bootstrap][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,6 +77,10 @@ PLACEHOLDER
 ## Getting Started
 
 ### Prerequisites
+* pip
+  ```sh
+  python3 -m pip install –upgrade pip
+  ```
 * requests
   ```sh
   pip install requests
@@ -87,32 +93,29 @@ PLACEHOLDER
   ```sh
   pip install matplotlib
   ```
+* OpenAI
+  ```sh
+  pip install --upgrade openai
+  ```
 
 ### Installation
 
 1. Get a free API Key at [https://www.weatherapi.com](https://www.weatherapi.com)
-1. Get a free API Key at [https://together.ai/apis](https://together.ai/apis)
-2. Import packages
+2. Get a free API Key at [https://openai.com/product](https://openai.com/product)
+3. Import packages
    ```sh
-   import requests
+   from flask import Flask, render_template, request, send_file
    ```
    ```sh
-   from datetime import datetime
+   from openai import OpenAI
    ```
-   ```sh
-   from flask import Flask, render_template, request
-   ```
-   ```sh
-   from main import get_weather_data
-   ```
-3. Enter your API in `terminal`
+4. Enter your API in `terminal`
    ```bash
-   export TOGETHEI_API_KEY='Enter Your Api'
+   export OPENAI_API_KEY='Enter Your Api'
    ```
-4. Enter your API in `Main.py`
-   ```reflex
-   together.api_key = "Enter Your Api"
-   ```
+5. Enter your API in `api_key_openai`
+6. Enter your API in `api_key_weatherAPI`
+   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,9 +162,9 @@ Project Link: [https://github.com/aleguzmancs9/Weather.git](https://github.com/a
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: linkedin.com/in/alexis-guzman-cs9
-[Together.ai]: https://images.squarespace-cdn.com/content/v1/6358bea282189a0adf57fe16/f0f7f485-91ef-47f6-b67c-305c10d73b59/together.ai+logo.png?format=1500w
-[Together-url]: https://together.ai/
+[OpenAI-url]: https://openai.com/
 [Python-url]: https://www.python.org/
 [WeatherAPI-url]: https://www.weatherapi.com/
 [Flask-url]: https://flask.palletsprojects.com/en/3.0.x/
 [Bootstrap-url]: https://getbootstrap.com/
+[JavaScript-url]: https://www.javascript.com/

@@ -125,12 +125,12 @@ PLACEHOLDER
 ## Usage
 
 <div style="display: flex;">
-  <img src="https://i.imgur.com/17ClSjS.jpg" alt="Home Page" width="200" style="margin-right: 20px;" />
-  <img src="https://i.imgur.com/BJv11WH.png" alt="Mist_Result" width="200" />
+  <img src="https://i.imgur.com/17ClSjS.jpg" alt="Home Page" width="300" height= "200" style="margin-right: 20px;" />
+  <img src="https://i.imgur.com/BJv11WH.png" alt="Mist_Result" width="300" height="200"/>
 </div>
 <div style="display: flex;">
-  <img src="https://i.imgur.com/If3WEcl.jpg" alt="Sunny_Result" width="200" style="margin-right: 20px;" />
-  <img src="https://i.imgur.com/kMTFG4m.png" alt="Cloudy_Result" width="200" />
+  <img src="https://i.imgur.com/If3WEcl.jpg" alt="Sunny_Result" width="300" height="200" style="margin-right: 20px;" />
+  <img src="https://i.imgur.com/kMTFG4m.png" alt="Cloudy_Result" width="300" height="200"/>
 </div>
 
 

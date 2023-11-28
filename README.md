@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/aleguzmancs9/Weather">
-    
+    <img src="https://i.imgur.com/ZPGsx9L.png" alt="Logo" width="400" height="400">
   </a>
 
 <h3 align="center">OtterWeather</h3>

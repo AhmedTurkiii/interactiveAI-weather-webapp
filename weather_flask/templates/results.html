@@ -22,6 +22,12 @@
                 <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
                 <div id="clothing-recommendations">Clothing Recommendations: {{ clothing  }}</div>
             </div>
+            <!-- lines 26-30 is to try and make a seperate box for clothing recommendations -->
+            <div class ="clothing-recommendations">
+                <!-- Separate div for clothing recommendations -->
+                </div> id="clothing-recommendations">Clothing Recommendations: {{ clothing  }}</div>
+        
+            </div>
         {% else %}
             <!-- Displaying a message if no weather data is available -->
             <div class="weather-info">Search for a valid city.</div>

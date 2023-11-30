@@ -129,3 +129,16 @@ body, html {
     margin: left; /* Aligns the weather info container to the left side of its parent container. */
 }
 
+/* still in progress  */
+/* Style for the clothing recommendations box */
+.clothing-recommendations {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 300px; /* Maximum width of the box */
+    margin-top: 20px; /* Space above the box */
+    margin-left: auto; /* Centers the box horizontally */
+    margin-right: auto; /* Centers the box horizontally */
+}
+

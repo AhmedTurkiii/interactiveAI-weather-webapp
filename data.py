@@ -1,10 +1,12 @@
 # Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name
 import requests
 from datetime import datetime
+from main import get_city
 # api_key = 'Enter API Key'
-api_key = 'b4b936c974fe4fcaa7235112230711'
+api_key = '673c1071284147b9957182547230512'
 
-city = input('Enter city name: ')
+city = get_city()
+#input('Enter city name: ')
 url = f'http://api.weatherapi.com/v1/forecast.json?key={api_key}&q={city}&days=1&aqi=no&alerts=no'
 
 # url = f'http://api.weatherapi.com/v1/forecast.json?key={api_key}&q=seaside&days=1&aqi=no&alerts=no'

@@ -4,18 +4,15 @@ import requests
 # Read the API key for the weather service from a file named 'api_key'
 API_KEY = open('api_key_weatherAPI', 'r').read()
 
-
-
 # Replace 'YOUR_API_KEY' with your actual Ipstack API key
-api_key = '1ea250123d38d5d798f1756d72e248b1'
+api_keyip = open('api_key_ipstack', 'r').read()
 
 # Ipstack API endpoint
-api_url = f'http://api.ipstack.com/check?access_key={api_key}'
-
+api_url = f'http://api.ipstack.com/check?access_key={api_keyip}'
 
 def get_city():
 
-    api_url = f'http://api.ipstack.com/check?access_key={api_key}'
+    api_url = f'http://api.ipstack.com/check?access_key={api_keyip}'
 
     # Make a request to the Ipstack API
     response = requests.get(api_url)

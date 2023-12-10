@@ -2,29 +2,32 @@
 <html>
 <head>
     <title>Weather Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Linking an external CSS file for styling the page -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <!-- Adding a button to navigate back to the home page -->
-    <button id="home-button">Home</button>
+    <button id="home-button">
+        <li class="w3-xlarge" ><i  class="fa fa-home" style="color:rgb(255, 255, 255);" style='font-size:40px;'></i> Home</li></button>
 </head>
 <body class="bg"> <!-- Setting a class for the body to apply background styling -->
     <div class="content-container">
         <!-- Jinja2 templating syntax to check if weather data is available -->
         {% if weather %}
             <!-- Displaying weather description -->
-            <div id="weather-description">Description: {{ weather['current']['condition']['text'] }}</div>
-            <div class="weather-info">
+            <strong><div id="weather-description" >Description: {{ weather['current']['condition']['text'] }} </strong>
+            </div>
+            <div class="weather-info" style="font-size:110%;">
                 <!-- Displaying various weather data points -->
-                <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
-                <div>Description: {{ weather['current']['condition']['text'] }}</div>
-                <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
-                <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
-                <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
-                <div id="clothing-recommendations">Clothing Recommendations: {{ clothing  }}</div>
+                <div >Current Temperature: <br> {{ weather['current']['temp_f'] }}°F </div>
+                <div>Wind Speed: <br>{{ weather['current']['wind_mph'] }} mph</div>
+                <div>Feels Like: <br>{{ weather['current']['feelslike_f'] }}°F</div>
+                <div>Moon Phase: <br>{{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
             </div>
  <!-- Separate div for clothing recommendations -->
             <div class ="clothing-recommendations">
-                Clothing Recommendations: {{ clothing }}
+                <strong> Clothing Recommendations:</strong> <br>{{ clothing }}
             </div>
         
         {% else %}

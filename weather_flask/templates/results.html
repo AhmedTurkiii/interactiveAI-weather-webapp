@@ -20,7 +20,20 @@
             </div>
             <div class="weather-info" style="font-size:110%;">
                 <!-- Displaying various weather data points -->
-                <div >Current Temperature: <br> {{ weather['current']['temp_f'] }}°F </div>
+                <div >Current Temperature: <br> {{ weather['current']['temp_f'] }}°F
+                    {% if weather['current']['condition']['text'] == 'Clear' or weather['current']['condition']['text'] == 'Sunny' %} <div><span style='font-size:90px;'>&#127780;</span>
+                    </div>
+                    {% elif weather['current']['condition']['text'] == 'Cloudy' or weather['current']['condition']['text'] == 'Partly cloudy'  %} <div> <span style='font-size:90px;'>&#127781;</span>
+                    </div>
+                    {% elif weather['current']['condition']['text'] == 'Cloudy' or weather['current']['condition']['text'] == 'Partly cloudy'  %} <div> <span style='font-size:90px;'>&#127781;</span>
+                    </div>
+                    {% elif weather['current']['condition']['text'] == 'Overcast' or weather['current']['condition']['text'] == 'Mist' or weather['current']['condition']['text'] == 'Fog' %} <div> <span style='font-size:90px;'>&#127787;</span>
+                    </div>
+                    {% elif weather['current']['condition']['text'] == 'rainy' or weather['current']['condition']['text'] == 'Patchy rain' or weather['current']['condition']['text'] == 'Moderate rain'or weather['current']['condition']['text'] == 'Heavy rain' %} <div> <span style='font-size:90px;'>&#127783;</span>
+                    </div>
+                    {% endif %}
+
+                 </div>
                 <div>Wind Speed: <br>{{ weather['current']['wind_mph'] }} mph</div>
                 <div>Feels Like: <br>{{ weather['current']['feelslike_f'] }}°F</div>
                 <div>Moon Phase: <br>{{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>

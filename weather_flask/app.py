@@ -16,32 +16,18 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def home():
      # Render the form
-       # Get city from form data
-    city = get_city() 
-    #request.form['city']
-    # Fetch weather data
-    weather_data = get_weather_data(city)
-    current_condition = weather_data['current']['condition']['text'].lower()
-    current_temperature = weather_data['current']['temp_f']
-    client = OpenAI(api_key=OPENAI_API_KEY)
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "You are a program that gives clothing recommendations based on weather conditions. Your response is only the clothing and nothing else. Provide shoes, bottoms, shirt/sweater. Output example: Rain boots, pants, sweater. Only give me one of each."},
-            {"role": "user", "content": f"It is currently {current_condition} and the temperature is {current_temperature}°F. Give me clothing recommendations"}
-        ]
-    )
-    clothing_recommendations = str(completion.choices[0].message.content)
-    clothing_recommendations = clothing_recommendations.replace('Shoes:', '').replace('Bottoms:', '').replace('Shirt/Sweater:', '')
-
-    # Render the results page with weather data
-    #return render_template('results.html', weather=weather_data, clothing=clothing_recommendations)
-    return render_template('home.html' ,weather=weather_data, clothing=clothing_recommendations)
+   
+    return render_template('home.html')
 
 @app.route('/results', methods=['POST'])
 def results():
-    # Get city from form data
-    city = request.form['city'] 
+
+    if 'cityInput' in request.form:
+            # Get city from form data
+            city = request.form['city']
+    elif 'autoDetection' in request.form:
+            # Get city from form data or use auto-detection logic
+            city = get_city() 
     #request.form['city']
     # Fetch weather data
     weather_data = get_weather_data(city)

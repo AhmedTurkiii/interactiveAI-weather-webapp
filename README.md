@@ -64,6 +64,7 @@ PLACEHOLDER
 * [Flask][Flask-url]
 * [OpenAI][OpenAI-url]
 * [WeatherAPI][WeatherAPI-url]
+* [IpstackAPI][WeatherAPI-url]
 * [JavaScript][JavaScript-url]
 * HTML
 * CSS
@@ -102,19 +103,23 @@ PLACEHOLDER
 
 1. Get a free API Key at [https://www.weatherapi.com](https://www.weatherapi.com)
 2. Get a free API Key at [https://openai.com/product](https://openai.com/product)
-3. Import packages
+3. Get a free API Key at [https://ipstack.com](https://ipstack.com/)
+
+4. Import packages
    ```sh
    from flask import Flask, render_template, request, send_file
    ```
    ```sh
    from openai import OpenAI
    ```
-4. Enter your API in `terminal`
+5. Enter your API in `terminal`
    ```bash
    export OPENAI_API_KEY='Enter Your Api'
    ```
-5. Enter your API in `api_key_openai`
-6. Enter your API in `api_key_weatherAPI`
+6. Enter your API in `api_key_openai`
+7. Enter your API in `api_key_weatherAPI`
+8. Enter your API in `api_key_ipstackAPI`
+
    
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -170,6 +175,7 @@ Project Link: [https://github.com/aleguzmancs9/Weather.git](https://github.com/a
 [OpenAI-url]: https://openai.com/
 [Python-url]: https://www.python.org/
 [WeatherAPI-url]: https://www.weatherapi.com/
+[IpstackAPI-url]: https://ipstack.com/
 [Flask-url]: https://flask.palletsprojects.com/en/3.0.x/
 [Bootstrap-url]: https://getbootstrap.com/
 [JavaScript-url]: https://www.javascript.com/

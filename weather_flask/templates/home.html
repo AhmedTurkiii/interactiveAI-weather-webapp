@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html> <!-- HTML5 document type declaration -->
 <html>
 <head>
@@ -12,31 +14,11 @@
             <!-- Input field for users to enter a city name -->
             <input type="text" name="city" placeholder="Enter city name">
             <!-- Submit button for the form -->
-            <input type="submit" value="Get Weather">
-       <!-- Jinja2 templating syntax to check if weather data is available -->
-       {% if weather %}
-       <!-- Displaying weather description -->
-       <h3 style="color:rgb(4, 25, 141);"> Current location weather <span style='font-size:40px;'>&#127780;</span>
-       </h3>
-       <div id="weather-description">Description: {{ weather['current']['condition']['text'] }}</div>
-       <div class="weather-info">
-           <!-- Displaying various weather data points -->
-           <div>Current Temperature: {{ weather['current']['temp_f'] }}°F</div>
-           <div>Description: {{ weather['current']['condition']['text'] }}</div>
-           <div>Wind Speed: {{ weather['current']['wind_mph'] }} mph</div>
-           <div>Feels Like: {{ weather['current']['feelslike_f'] }}°F</div>
-           <div>Moon Phase: {{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
-       </div>
-<!-- Separate div for clothing recommendations -->
-       <div class ="clothing-recommendations">
-           Clothing Recommendations: {{ clothing }}
-       </div>
-   
-   {% else %}
-       <!-- Displaying a message if no weather data is available -->
-       <div class="weather-info">Search for a valid city.</div>
-   {% endif %}
+            <input name="cityInput" type="submit" value="Get Weather">
+            <br>
+            <input name="autoDetection" type="submit" value="Get Weather for current location"> </form>
 
+        </form>
     </div>
 </body>
 </html>

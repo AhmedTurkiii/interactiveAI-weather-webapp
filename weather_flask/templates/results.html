@@ -111,6 +111,8 @@
             updateBackground("rain", "bg-rainy");
             updateBackground("thunder", "bg-thunder");
             updateBackground("windy", "bg-windy");
+            updateBackground("snow", "bg-snow");
+            updateBackground("ice", "bg-ice");
         });
 
         playWeatherSound("patchy rain possible", "{{ url_for('play_audio', filename='patchy_rain_sound.mp3') }}");
@@ -122,6 +124,8 @@
         playWeatherSound("overcast",  "{{ url_for('play_audio', filename='overcast_sound.mp3') }}");
         playWeatherSound("mist", "{{ url_for('play_audio', filename='mist_sound.mp3') }}");
         playWeatherSound("cloud", "{{ url_for('play_audio', filename='cloud_sound.mp3') }}");
+        playWeatherSound("snow", "{{ url_for('play_audio', filename='snow:ice.mp3') }}");
+        playWeatherSound("ice", "{{ url_for('play_audio', filename='snow:ice.mp3') }}");
     </script>
 </body>
 </html>

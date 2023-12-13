@@ -51,7 +51,18 @@ Weather updates for otters
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-PLACEHOLDER
+This is a  weather app that uses multimedia to represent the current weather conditions.
+
+The user will be given two options 
+1. To attain the weather conditions for the current location 
+2. Search for weather conditions of a desired location.
+
+Once an option is selected the user will be brought to the results page where a background image, that matches the current weather condition, will appear. Music matching the current description will atomically play. 
+The user will have the option to pause and play the music as desired. 
+
+The weather conditions (Weather Description, Current Temperature, Wind Speed, Feels Like, & Moon Phase) will be displayed along with clothing recommendations for the current weather conditions. 
+
+The user will also have the option to return to the home page by clicking a home page button.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

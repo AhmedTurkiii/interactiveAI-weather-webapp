@@ -70,6 +70,20 @@ body, html {
     background-size: cover; /* Scales the image to completely cover the element, maintaining its aspect ratio. *//
 }
 
+.bg-snow {
+    background-image: url('/static/images/snowy.png');
+    background-position: center center; /* Positions the background image in the center horizontally and 12% from the top vertically. */
+    background-repeat: no-repeat; /* Ensures that the background image does not repeat (tile) across the element. */
+    background-size: cover; /* Scales the image to completely cover the element, maintaining its aspect ratio. *//
+}
+
+.bg-ice {
+    background-image: url('/static/images/icy.png');
+    background-position: center center; /* Positions the background image in the center horizontally and 12% from the top vertically. */
+    background-repeat: no-repeat; /* Ensures that the background image does not repeat (tile) across the element. */
+    background-size: cover; /* Scales the image to completely cover the element, maintaining its aspect ratio. *//
+}
+
 /* New style for centering the sound buttons */
 .center-container {
     display: flex;

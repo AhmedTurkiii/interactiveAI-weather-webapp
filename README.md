@@ -145,7 +145,10 @@ PLACEHOLDER
 
 <!-- Future Work -->
 ## Future Work
-PLACEHOLDER
+<br>- Weekly weather updates
+<br>- Pictures for Clothing Recoomendations
+<br>- More data about weather(High and Low, Average, etc.)
+<br>- More backgroud audios and images for more weather conditions
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

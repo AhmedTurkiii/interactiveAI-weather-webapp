@@ -68,7 +68,6 @@ PLACEHOLDER
 * [JavaScript][JavaScript-url]
 * HTML
 * CSS
-* [Bootstrap][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -177,5 +176,4 @@ Project Link: [https://github.com/aleguzmancs9/Weather.git](https://github.com/a
 [WeatherAPI-url]: https://www.weatherapi.com/
 [IpstackAPI-url]: https://ipstack.com/
 [Flask-url]: https://flask.palletsprojects.com/en/3.0.x/
-[Bootstrap-url]: https://getbootstrap.com/
 [JavaScript-url]: https://www.javascript.com/

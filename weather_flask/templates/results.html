@@ -36,7 +36,25 @@
                  </div>
                 <div>Wind Speed: <br>{{ weather['current']['wind_mph'] }} mph</div>
                 <div>Feels Like: <br>{{ weather['current']['feelslike_f'] }}°F</div>
-                <div>Moon Phase: <br>{{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}</div>
+                <div>Moon Phase: <br>{{ weather['forecast']['forecastday'][0]['astro']['moon_phase'] }}
+                {% if weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Waning Crescent' %}<span style='font-size:25px;'>&#127768;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Waxing Cresent Moon' %}<span style='font-size:25px;'>&#127762;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'First Quarter Moon' %}<span style='font-size:25px;'>&#127763;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Waxing Gibbous Moon' %}<span style='font-size:25px;'>&#127764;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Waining Cresent Moon' %}<span style='font-size:25px;'>&#12776;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Full Moon' %}<span style='font-size:25px;'>&#127765;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'New Moon' %}<span style='font-size:25px;'>&#127761;</span>
+                </div>
+                {% elif weather['forecast']['forecastday'][0]['astro']['moon_phase'] == 'Waxing Crescent' %}<span style='font-size:25px;'>&#127762;</span>
+                </div>
+                {% endif %}
+                </div>
             </div>
  <!-- Separate div for clothing recommendations -->
             <div class ="clothing-recommendations">

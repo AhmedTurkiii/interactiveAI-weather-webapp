@@ -140,12 +140,12 @@ The user will also have the option to return to the home page by clicking a home
 ## Usage
 
 <div style="display: flex;">
-  <img src="https://i.imgur.com/17ClSjS.jpg" alt="Home Page" width="300" height= "200" style="margin-right: 20px;" />
-  <img src="https://i.imgur.com/BJv11WH.png" alt="Mist_Result" width="300" height="200"/>
+  <img src="https://i.imgur.com/hvuodIX.png" alt="Home Page" width="300" height= "200" style="margin-right: 20px;" />
+  <img src="https://i.imgur.com/MJfu4uF.png" alt="Mist_Result" width="300" height="200"/>
 </div>
 <div style="display: flex;">
-  <img src="https://i.imgur.com/If3WEcl.jpg" alt="Sunny_Result" width="300" height="200" style="margin-right: 20px;" />
-  <img src="https://i.imgur.com/kMTFG4m.png" alt="Cloudy_Result" width="300" height="200"/>
+  <img src="https://i.imgur.com/6WBoTdm.png" alt="Sunny_Result" width="300" height="200" style="margin-right: 20px;" />
+  <img src="https://i.imgur.com/u490Jg9.png" alt="Cloudy_Result" width="300" height="200"/>
 </div>
 
 

@@ -170,7 +170,7 @@ The user will also have the option to return to the home page by clicking a home
 Alexis Guzman - [Linkedin](https://www.linkedin.com/in/alexis-guzman-cs9/) - aleguzmancs9@gmail.com
 <br>Dalia Cabrera - [Linkedin](https://www.linkedin.com/in/dalia-c-4754a4247/) - daliaesmcabrera@outlook.com
 <br>Jean-Luc Martel - [Linkedin](https://www.linkedin.com/in/jean-luc-martel-csumb/) - jmartel@gmail.com
-<br>Ahmed Torki [Linkedin](https://www.linkedin.com/in/torki-ah/) - ahmedturki2232014@gmail.com
+<br>Ahmed Torki [Linkedin](https://www.linkedin.com/in/torki-ah/) - torki.ah.dev@gmail.com
 
 
 Project Link: [https://github.com/aleguzmancs9/Weather.git](https://github.com/aleguzmancs9/Weather)
